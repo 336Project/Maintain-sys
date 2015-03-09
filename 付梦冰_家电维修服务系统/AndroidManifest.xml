@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.Fmb_applianceRepair_System"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:theme="@style/NoActionBar" >
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.SplashActivity"
+            android:label="@string/title_activity_splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.CustomMainActivity"
+            android:label="@string/title_activity_custom_main" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.UserDateActivity"
+            android:label="@string/title_activity_user_date" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.AccountActivity"
+            android:label="@string/title_activity_account" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.UserDateUpdateActivity"
+            android:label="@string/title_activity_user_date_update"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.TopUpActivity"
+            android:label="@string/title_activity_top_up" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.CashWithdrawalActivity"
+            android:label="@string/title_activity_cash_withdrawal" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.OrderActivity"
+            android:label="@string/title_activity_order" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.RepairActivity"
+            android:label="@string/title_activity_repair" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.RoleManagementActivity"
+            android:label="@string/title_activity_role_management" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.UserManagementActivity"
+            android:label="@string/title_activity_user_management" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.TransactionManagementActivity"
+            android:label="@string/title_activity_transaction_management" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.TransactionParticularActivity"
+            android:label="@string/title_activity_transaction_particular" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.OrderManagementActivity"
+            android:label="@string/title_activity_order_management" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.OrderParticularActivity"
+            android:label="@string/title_activity_order_particular" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.UserParticularActivity"
+            android:label="@string/title_activity_user_particular" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.UserUpdateActivity"
+            android:label="@string/title_activity_user_update" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.AddUserActivity"
+            android:label="@string/title_activity_add_user" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.AccountManagementActivity"
+            android:label="@string/title_activity_account_management" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.AccountParticularActivity"
+            android:label="@string/title_activity_account_particular" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.AccountAddActivity"
+            android:label="@string/title_activity_account_add" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.OrderUpdateActivity"
+            android:label="@string/title_activity_account_update" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.OrderCompanyActivity"
+            android:label="@string/title_activity_order_company" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.OrderQuoteActivity"
+            android:label="@string/title_activity_order_quote" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.RegisterUserActivity"
+            android:label="@string/title_activity_register_user" >
+        </activity>
+    </application>
+
+</manifest>

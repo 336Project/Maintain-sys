@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OrderUpdateActivity"
+    android:background="@drawable/white"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0095FF" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/iv_back_selector"
+            android:scaleType="center"
+            android:src="@drawable/iv_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="订单更新"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="保存"
+             />
+    </LinearLayout>
+
+   <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="报修内容" 
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_content"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:hint="请填写报修内容"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="我的联系电话" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_contactTelUser"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:hint="请填写联系内容"
+                     />
+
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView3"
+                    android:text="维修公司" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_customerCompany"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:hint="点击选择维修公司"
+                     />
+
+            </LinearLayout>
+            
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,167 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AccountAddActivity"
+    android:background="@drawable/white"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0095FF" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/iv_back_selector"
+            android:scaleType="center"
+            android:src="@drawable/iv_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="充值"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" 
+            android:text="确定"
+            />
+    </LinearLayout>
+
+   <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="用户名" 
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_userName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:hint="点击,选择用户"
+                    android:textSize="16sp"
+                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="充值金额" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_money"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:inputType="numberDecimal"
+                    android:hint="输入充值金额"
+                    android:textSize="16sp"
+                     />
+
+            </LinearLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="备注" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_remark"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="后台充值"
+                    android:hint="输入备注"
+                    android:textSize="16sp"
+                     />
+
+            </LinearLayout>
+            
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

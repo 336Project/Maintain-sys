@@ -1,0 +1,370 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UserParticularActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0095FF" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/iv_back_selector"
+            android:scaleType="center"
+            android:src="@drawable/iv_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="用户详情"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+   <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="用户账号" 
+                    />
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:layout_marginLeft="10dp"
+                    android:text="角色" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_userName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_roleName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView3"
+                    android:text="真实姓名" />
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView4"
+                    android:layout_marginLeft="10dp"
+                    android:text="昵称" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_realName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+                <TextView
+                     android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_nickName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+            </LinearLayout>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView3"
+                    android:text="邮箱" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="手机号" />
+		<TextView
+                    style="@style/tv_userdate_style"
+                    android:layout_marginLeft="10dp"
+                    android:text="账号余额" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_tel"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    
+                     />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_balance"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="注册时间" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_registerTime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="最后一次登录时间" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_lastLoginTime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="简介" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_introduction"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+ <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="来源" />
+		<TextView
+                    style="@style/tv_userdate_style"
+                    android:layout_marginLeft="10dp"
+                    android:text="状态" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" 
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_source"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    
+                     />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_status"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

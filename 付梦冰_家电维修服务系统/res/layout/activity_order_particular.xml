@@ -1,0 +1,317 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OrderParticularActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0095FF" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/iv_back_selector"
+            android:scaleType="center"
+            android:src="@drawable/iv_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="订单详情"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+   <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                 >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="用户账号" 
+                    />
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:layout_marginLeft="10dp"
+                    android:text="用户联系电话" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_customerUser"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_contactTelUser"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView3"
+                    android:text="公司账号" />
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView4"
+                    android:layout_marginLeft="10dp"
+                    android:text="公司联系电话" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_customerCompany"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+                <TextView
+                     android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_contactTelCompany"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+            </LinearLayout>
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:id="@+id/textView3"
+                    android:text="创建时间" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_createTime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="完成时间" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_completeTime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    
+                     />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="报价(元)" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+            </LinearLayout>
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="报修内容" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_repairContent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+              <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="状态" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" 
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+
+            </LinearLayout>
+	
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

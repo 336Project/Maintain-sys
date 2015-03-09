@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AccountManagementActivity"
+     android:background="@drawable/white"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0095FF" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/iv_back" 
+            android:background="@drawable/iv_back_selector"
+            />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="账户信息"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_more"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/iv_back_selector"
+             >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/mb" />
+        </LinearLayout>
+    </LinearLayout>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" 
+        android:background="#E9EBE8"
+       
+        >
+        
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"
+            android:background="@drawable/ll_search_shape"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+             android:gravity="center_vertical"
+            >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jpw" 
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/transparent"
+                android:ems="10" >
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#0095FF"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="取消" />
+
+    </LinearLayout>
+  
+
+   <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pl_userlist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none" />
+
+</LinearLayout>

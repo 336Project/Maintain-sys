@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TopUpActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0095FF" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/iv_back_selector"
+            android:scaleType="center"
+            android:src="@drawable/iv_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="充值"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="充值金额" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_money"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:hint="请输入充值金额"
+                    android:inputType="numberDecimal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/tv_userdate_style"
+                    android:text="备注" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_remark"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:gravity="top"
+                    android:hint="请输入备注说明"
+                    android:minLines="5"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/tv_realtopup"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/tv_topup_shape"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:text="确认充值" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

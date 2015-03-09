@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="white">#ffffff</drawable>
+    <drawable name="blue_btn">#0095FF</drawable>
+    <drawable name="black_light">#aa333333</drawable>
+    <drawable name="transparent">#00ffffff</drawable>
+    <drawable name="black_pressed">#33333333</drawable>
+    
+</resources>
