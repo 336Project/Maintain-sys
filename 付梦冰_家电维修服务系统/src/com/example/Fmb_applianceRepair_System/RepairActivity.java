@@ -28,7 +28,6 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 /**
- * 
  * @author Administrator
  *±®–ﬁΩÁ√Ê
  */
@@ -42,6 +41,7 @@ public class RepairActivity extends Activity implements OnClickListener{
 	private String[] companyIdStrings;
 	protected String idCode;
 	private User user;
+	private EditText et_address;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,6 +64,7 @@ public class RepairActivity extends Activity implements OnClickListener{
 		findViewById(R.id.iv_back).setOnClickListener(this);
 		et_content = (EditText) findViewById(R.id.et_content);
 		et_tel = (EditText) findViewById(R.id.et_tel);
+		et_address = (EditText) findViewById(R.id.et_address);
 		tv_company = (TextView) findViewById(R.id.tv_company);
 		tv_company.setOnClickListener(this);
 		findViewById(R.id.tv_realtopup).setOnClickListener(this);
@@ -109,14 +110,15 @@ public class RepairActivity extends Activity implements OnClickListener{
 		protected String doInBackground(String... params) {
 
 			String repairContent = et_content.getText().toString().trim();
-			String contactTelUser = et_tel.getText().toString()
-					.trim();
+			String contactTelUser = et_tel.getText().toString().trim();
+			String address = et_address.getText().toString().trim();
 			Map<String, String> parMap = new HashMap<String, String>();
 			parMap.put("companyId", idCode);
 			parMap.put("contactTelUser", contactTelUser);
 			parMap.put("repairContent", repairContent);
 			parMap.put("customerUser", user.realName);
 			parMap.put("ids", user.id+"");
+			parMap.put("address",address);
 			
 			String result = HttpUtils.postByApi(params[0], parMap);
 			return result;

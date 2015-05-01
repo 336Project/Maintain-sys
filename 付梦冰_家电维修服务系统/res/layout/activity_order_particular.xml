@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+     android:background="@color/white"
     tools:context=".OrderParticularActivity" >
 
     <LinearLayout
@@ -219,14 +220,10 @@
                  android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 >
-
                 <TextView
                     style="@style/tv_userdate_style"
                     android:text="报价(元)" />
-
-
             </LinearLayout>
-            
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -235,6 +232,34 @@
 
                 <TextView
                     android:id="@+id/tv_price"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
+            </LinearLayout>
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="报价明细" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+                <TextView
+                    android:id="@+id/tv_quotecontent"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -274,6 +299,34 @@
                     android:paddingTop="5dp"
                      />
 
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="维修人员信息" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+                <TextView
+                    android:id="@+id/tv_repairMan"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                     />
             </LinearLayout>
               <LinearLayout
                 android:layout_width="match_parent"

@@ -21,6 +21,11 @@ public class Constant {
 	public  static final String GETLISTROLE_URL=URL+"/sechand-platform/app/appRoleAction!listRole.action";
 	public  static final String GETLISTTRADE_URL=URL+"/sechand-platform/app/appTradeAction!listTradesByParams.action";
 	public  static final String DELETETRADE_URL=URL+"/sechand-platform/app/appTradeAction!deleteTradeByIds.action";
+	//-------维修人员信息-------
+	public  static final String getServicemanList_URL=URL+"/sechand-platform/app/appUserAction!listRepairByParams.action";
+	public  static final String getServicemanAllList_URL=URL+"/sechand-platform/app/appUserAction!listServiceman.action";
+	public  static final String dispatchServiceman_URL=URL+"/sechand-platform/app/appOrderAction!dispatch.action";
+	
 	//-------账户操作------
 	public  static final String account_ConfirmById=URL+"/sechand-platform/app/accountAction!confirmAccount.action";
 	public  static final String account_DeleteById=URL+"/sechand-platform/app/accountAction!deleteAccountByIds.action";
@@ -38,4 +43,5 @@ public class Constant {
 	public  static final String order_GetOrderListByUser=URL+"/sechand-platform/app/appOrderAction!listCustomerOrdersByParams.action";
 	public  static final String order_Quote=URL+"/sechand-platform/app/appOrderAction!quoteOrderByCompany.action";
 	public  static final String order_CompleteOrderById=URL+"/sechand-platform/app/appOrderAction!completeOrderById.action";
+	public  static final String order_UpdateStatusById=URL+"/sechand-platform/app/appOrderAction!updateStatusByIds.action";
 }

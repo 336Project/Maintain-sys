@@ -8,16 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.adapter.AccountAdpater;
 import com.adapter.OrderAdpater;
 import com.application.MyApplication;
-import com.bean.Account;
+import com.asynctask.UpdateOrderStatusAsyncTask;
 import com.bean.Order;
 import com.bean.User;
 import com.constant.Constant;
-import com.example.Fmb_applianceRepair_System.AccountActivity.AccountAsycTask;
-import com.example.Fmb_applianceRepair_System.AccountActivity.CancelAccountAsyncTask;
-import com.example.Fmb_applianceRepair_System.AccountActivity.UserBroadcastReceiver;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
@@ -127,7 +123,10 @@ public class OrderActivity extends Activity implements OnClickListener,
 						menu.add(0, 0, 0, "确认");
 						menu.add(0, 1, 0, "修改");
 						menu.add(0, 2, 0, "取消");
-						menu.add(0, 3, 0, "返回");
+						menu.add(0, 3, 0, "工人已到");
+						menu.add(0, 4, 0, "工人未到");
+						menu.add(0, 5, 0, "确认支付");
+						menu.add(0, 6, 0, "返回");
 					}
 				});
 		lv_orderlist
@@ -180,13 +179,14 @@ public class OrderActivity extends Activity implements OnClickListener,
 	}
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
+		String status = order_List.get(currentPosition).status;
+		Order order = order_List.get(currentPosition);
+		Map<String, String> parMap=new HashMap<String, String>();
 		switch (item.getItemId()) {
 		case 0:
 			new Order_ConfirmAsyncTask().execute(Constant.order_Confirm);
 			break;
 		case 1:
-			String status = order_List.get(currentPosition).status;
-			Order order = order_List.get(currentPosition);
 			if(status.equals("新订单")){
 				Intent intent=new Intent(OrderActivity.this, OrderUpdateActivity.class);
 				intent.putExtra("order", order);
@@ -199,6 +199,37 @@ public class OrderActivity extends Activity implements OnClickListener,
 		case 2:
 			new Order_ConfirmAsyncTask().execute(Constant.order_Cancel);
 			break;
+		case 3:
+			if(status.equals("已派遣")||status.equals("工人未到")||status.equals("工人已到")){
+				parMap.put("ids", order.id+"");
+				parMap.put("status", "工人已到");
+				new UpdateOrderStatusAsyncTask(this,parMap).execute(Constant.order_UpdateStatusById);
+			}
+			else{
+				ToastUtils.showMessage(OrderActivity.this, "只有已派遣订单才能确定维修人员是否到达~");
+			}
+			break;
+		case 4:
+			if(status.equals("已派遣")||status.equals("工人未到")||status.equals("工人已到")){
+				parMap.put("ids", order.id+"");
+				parMap.put("status", "工人未到");
+				new UpdateOrderStatusAsyncTask(this,parMap).execute(Constant.order_UpdateStatusById);
+			}
+			else{
+				ToastUtils.showMessage(OrderActivity.this, "只有已派遣订单才能确定维修人员是否到达~");
+			}
+			break;
+		case 5:
+			if(status.equals("已完成")){
+				Intent intent=new Intent(OrderActivity.this, PayActivity.class);
+				intent.putExtra("order", order);
+				startActivity(intent);
+			}
+			else{
+				ToastUtils.showMessage(OrderActivity.this, "只有已完成订单才可支付");
+			}
+			break;
+			
 		default:
 			break;
 		}
@@ -241,8 +272,6 @@ public class OrderActivity extends Activity implements OnClickListener,
 			}
 		}
 	}
-	
-	
 
 	class OrderAsycTask extends AsyncTask<String, Void, String> {
 
@@ -301,11 +330,14 @@ public class OrderActivity extends Activity implements OnClickListener,
 							String repairContent = jsonObject_data
 									.getString("repairContent"); // 报价内容
 							String status = jsonObject_data.getString("status"); // 状态
+							String address = jsonObject_data.getString("address"); // 状态
+							String quoteContent = jsonObject_data.getString("quoteContent");
+							String repairMan = jsonObject_data.getString("repairMan");
 							Order order = new Order(id, userId, companyId,
 									completeTime, createTime, quoteTime,
 									status, repairContent, customerUser,
 									customerCompany, contactTelUser,
-									contactTelCompany, price);
+									contactTelCompany, price,address,quoteContent,repairMan);
 							order_List.add(order);
 						}
 						currentPage = String.valueOf((Integer

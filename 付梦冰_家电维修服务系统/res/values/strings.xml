@@ -41,5 +41,12 @@
     <string name="title_activity_order_company">OrderCompanyActivity</string>
     <string name="title_activity_order_quote">OrderQuoteActivity</string>
     <string name="title_activity_register_user">RegisterUserActivity</string>
+    <string name="title_activity_serviceman_main">ServicemanMainActivity</string>
+    <string name="title_activity_serviceman">ServicemanActivity</string>
+    <string name="title_activity_serviceman_add">ServicemanAddActivity</string>
+    <string name="title_activity_serviceman_particular">ServicemanParticularActivity</string>
+    <string name="title_activity_serviceman_update">ServicemanUpdateActivity</string>
+    <string name="title_activity_pay">PayActivity</string>
+    <string name="title_activity_dispatch">DispatchActivity</string>
 
 </resources>

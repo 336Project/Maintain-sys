@@ -118,9 +118,10 @@ public class OrderCompanyActivity extends Activity implements OnClickListener
 					public void onCreateContextMenu(ContextMenu menu, View v,
 							ContextMenuInfo menuInfo) {
 						menu.setHeaderTitle("操作");
-						menu.add(0, 0, 0, "报价");
-						menu.add(0, 1, 0, "完成");
-						menu.add(0, 2, 0, "返回");
+						menu.add(0, 0, 0, "派遣维修人员");
+						menu.add(0, 1, 0, "报价");
+						menu.add(0, 2, 0, "完成");
+						menu.add(0, 3, 0, "返回");
 					}
 				});
 		lv_orderlist
@@ -171,24 +172,33 @@ public class OrderCompanyActivity extends Activity implements OnClickListener
 	}
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
+		String status = order_List.get(currentPosition).status;
+		Order order = order_List.get(currentPosition);
 		switch (item.getItemId()) {
-		
 		case 0:
+			if(status.equals("新订单")||status.equals("工人未到")){
+				Intent intent=new Intent(OrderCompanyActivity.this, DispatchActivity.class);
+				intent.putExtra("order", order);
+				startActivity(intent);
+			}
+			else{
+				ToastUtils.showMessage(OrderCompanyActivity.this, "只有新订单或工人未到才能报价");
+			}
+			break;
+		
+		case 1:
 //			new Order_ConfirmAsyncTask().execute(Constant.order_Confirm);
-			String status = order_List.get(currentPosition).status;
-			Order order = order_List.get(currentPosition);
-			if(status.equals("新订单")){
+			if(status.equals("新订单")||status.equals("工人已到")){
 				Intent intent=new Intent(OrderCompanyActivity.this, OrderQuoteActivity.class);
 				intent.putExtra("order", order);
 				startActivity(intent);
 			}
 			else{
-				ToastUtils.showMessage(OrderCompanyActivity.this, "只有新订单才能报价");
+				ToastUtils.showMessage(OrderCompanyActivity.this, "只有新订单或工人已到才能报价");
 			}
 			break;
-		case 1:
-			String status2 = order_List.get(currentPosition).status;
-			if(status2.equals("已报价")){
+		case 2:
+			if(status.equals("已报价")){
 				new Order_CompleteOrderByIdAsyncTask().execute(Constant.order_CompleteOrderById);
 			}
 			else{
@@ -295,11 +305,14 @@ public class OrderCompanyActivity extends Activity implements OnClickListener
 							String repairContent = jsonObject_data
 									.getString("repairContent"); // 报价内容
 							String status = jsonObject_data.getString("status"); // 状态
+							String address = jsonObject_data.getString("address"); // 状态
+							String quoteContent = jsonObject_data.getString("quoteContent");
+							String repairMan = jsonObject_data.getString("repairMan");
 							Order order = new Order(id, userId, companyId,
 									completeTime, createTime, quoteTime,
 									status, repairContent, customerUser,
 									customerCompany, contactTelUser,
-									contactTelCompany, price);
+									contactTelCompany, price,address,quoteContent,repairMan);
 							order_List.add(order);
 						}
 						currentPage = String.valueOf((Integer

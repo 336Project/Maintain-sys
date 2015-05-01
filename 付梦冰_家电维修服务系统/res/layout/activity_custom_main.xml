@@ -68,9 +68,8 @@
                     android:textSize="22sp" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_account"
+<LinearLayout
+                android:id="@+id/ll_order"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginLeft="5dp"
@@ -80,25 +79,24 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_gravity="right"
-                    android:src="@drawable/iv_pig" />
+                    android:src="@drawable/iv_bug" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="账户信息"
+                    android:text="订单信息"
                     android:textColor="#ffffffff"
-                    android:textSize="22sp"
-                    />
+                    android:textSize="22sp" />
 
             </LinearLayout>
+            
         </LinearLayout>
 
  
@@ -119,41 +117,10 @@
             >
 
             <LinearLayout
-                android:id="@+id/ll_order"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="#DD2094B7"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="订单信息"
-                    android:textColor="#ffffffff"
-                    android:textSize="22sp"
-                    
-                     />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/iv_bug" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/ll_quit"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="#DD2094B7"
@@ -170,13 +137,6 @@
                     android:textSize="22sp"
                     />
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="right"
-                    android:src="@drawable/iv_clock" />
 
             </LinearLayout>
         </LinearLayout>

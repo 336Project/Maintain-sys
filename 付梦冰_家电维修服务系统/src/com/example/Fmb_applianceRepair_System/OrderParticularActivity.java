@@ -42,6 +42,8 @@ public class OrderParticularActivity extends Activity implements
 		TextView tv_createTime = (TextView) findViewById(R.id.tv_createTime);
 		tv_createTime.setText(order.createTime);
 		TextView tv_completeTime = (TextView) findViewById(R.id.tv_completeTime);
+		TextView tv_quotecontent = (TextView) findViewById(R.id.tv_quotecontent);
+		TextView tv_repairMan = (TextView) findViewById(R.id.tv_repairMan);
 		if (order.completeTime.equals("null")) {
 
 		} else {
@@ -53,6 +55,17 @@ public class OrderParticularActivity extends Activity implements
 		} else {
 			tv_price.setText(order.price);
 		}
+		if (order.quoteContent.equals("null")) {
+
+		} else {
+			tv_quotecontent.setText(order.quoteContent);
+		}
+		if (order.repairMan.equals("null")) {
+
+		} else {
+			tv_repairMan.setText(order.repairMan);
+		}
+
 		TextView tv_repairContent = (TextView) findViewById(R.id.tv_repairContent);
 		tv_repairContent.setText(order.repairContent);
 		TextView tv_status = (TextView) findViewById(R.id.tv_status);

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".OrderQuoteActivity"
+    
     android:background="@drawable/white"
      >
 
@@ -184,6 +185,42 @@
                     android:paddingTop="5dp"
                     android:inputType="numberDecimal"
                     android:hint="请填写报价金额"
+                    android:textSize="16sp"
+                     />
+
+            </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="10dp"
+                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+
+                <TextView
+                    style="@style/tv_userdate_style"
+                    android:text="清单明细" />
+
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <EditText
+                    android:id="@+id/et_quoteContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#B2BFBF"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:hint="请填写清单明细"
+                    android:gravity="top"
+                    android:minLines="5"
                     android:textSize="16sp"
                      />
 

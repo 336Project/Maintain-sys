@@ -11,6 +11,7 @@ import com.bean.User;
 import com.example.Fmb_applianceRepair_System.CustomMainActivity;
 import com.example.Fmb_applianceRepair_System.LoginActivity;
 import com.example.Fmb_applianceRepair_System.MainActivity;
+import com.example.Fmb_applianceRepair_System.ServicemanMainActivity;
 import com.utils.HttpUtils;
 
 import android.app.Activity;
@@ -74,7 +75,11 @@ public class LoginAsyncTask extends AsyncTask<String, Void, String>{
 						Intent intent = new Intent(activity,MainActivity.class);
 						activity.startActivity(intent);
 					}
-					else{
+					else if(roleCode==2){
+						Intent intent = new Intent(activity,ServicemanMainActivity.class);
+						activity.startActivity(intent);
+					}
+					else if(roleCode==3){
 						Intent intent = new Intent(activity,CustomMainActivity.class);
 						activity.startActivity(intent);
 					}

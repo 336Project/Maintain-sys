@@ -130,6 +130,34 @@
             android:name="com.example.Fmb_applianceRepair_System.RegisterUserActivity"
             android:label="@string/title_activity_register_user" >
         </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.ServicemanMainActivity"
+            android:label="@string/title_activity_serviceman_main" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.ServicemanActivity"
+            android:label="@string/title_activity_serviceman" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.ServicemanAddActivity"
+            android:label="@string/title_activity_serviceman_add" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.ServicemanParticularActivity"
+            android:label="@string/title_activity_serviceman_particular" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.ServicemanUpdateActivity"
+            android:label="@string/title_activity_serviceman_update" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.PayActivity"
+            android:label="@string/title_activity_pay" >
+        </activity>
+        <activity
+            android:name="com.example.Fmb_applianceRepair_System.DispatchActivity"
+            android:label="@string/title_activity_dispatch" >
+        </activity>
     </application>
 
 </manifest>

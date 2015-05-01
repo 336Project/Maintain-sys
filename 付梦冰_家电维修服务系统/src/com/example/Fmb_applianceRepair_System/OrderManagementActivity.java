@@ -212,7 +212,10 @@ public class OrderManagementActivity extends Activity implements
 							String price = jsonObject_data.getString("price"); //报价
 							String repairContent = jsonObject_data.getString("repairContent"); //报价内容
 							String status = jsonObject_data.getString("status"); //状态
-							Order order = new Order(id, userId, companyId, completeTime, createTime, quoteTime, status, repairContent, customerUser, customerCompany, contactTelUser, contactTelCompany, price);
+							String address = jsonObject_data.getString("address"); // 状态
+							String quoteContent = jsonObject_data.getString("quoteContent");
+							String repairMan = jsonObject_data.getString("repairMan");
+							Order order = new Order(id, userId, companyId, completeTime, createTime, quoteTime, status, repairContent, customerUser, customerCompany, contactTelUser, contactTelCompany, price,address,quoteContent,repairMan);
 							order_List.add(order);
 						}
 						currentPage=String.valueOf((Integer.valueOf(currentPage)+1));

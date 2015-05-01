@@ -7,7 +7,7 @@
     
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="232322232"
                 android:singleLine="true"
+                android:layout_weight="1"
                  android:textColor="@color/black"
                  />
 
@@ -83,7 +84,6 @@
                 android:id="@+id/tv_quoteTime"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="2015-09-22 21:24:21"
                 android:maxLength="20"
                  android:textColor="@color/black"
                  />
@@ -102,6 +102,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="232322232"
                 android:singleLine="true"
                 android:textColor="@color/black"

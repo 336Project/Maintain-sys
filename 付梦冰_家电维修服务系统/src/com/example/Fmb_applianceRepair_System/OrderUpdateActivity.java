@@ -13,7 +13,6 @@ import com.bean.Order;
 import com.bean.User;
 import com.constant.Constant;
 import com.example.Fmb_applianceRepair_System.AccountAddActivity.UserSmall;
-import com.example.Fmb_applianceRepair_System.RepairActivity.ListCompanyAsyncTask;
 import com.utils.HttpUtils;
 import com.utils.ToastUtils;
 
@@ -40,6 +39,7 @@ public class OrderUpdateActivity extends Activity implements OnClickListener {
 	private String[] companyNameStrings;
 	private String[] companyIdStrings;
 	protected String idCode;
+	private EditText et_address;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,11 +113,13 @@ public class OrderUpdateActivity extends Activity implements OnClickListener {
 		findViewById(R.id.tv_save).setOnClickListener(this);
 		et_content = (EditText) findViewById(R.id.et_content);
 		et_contactTelUser = (EditText) findViewById(R.id.et_contactTelUser);
+		et_address = (EditText) findViewById(R.id.et_address);
 		tv_customerCompany = (TextView) findViewById(R.id.tv_customerCompany);
 		tv_customerCompany.setOnClickListener(this);
 		et_content.setText(order.repairContent);
 		et_contactTelUser.setText(order.contactTelUser);
 		tv_customerCompany.setText(order.customerCompany);
+		et_address.setText(order.address);
 
 	}
 
@@ -166,13 +168,14 @@ public class OrderUpdateActivity extends Activity implements OnClickListener {
 		protected String doInBackground(String... params) {
 
 			String repairContent = et_content.getText().toString().trim();
-			String contactTelUser = et_contactTelUser.getText().toString()
-					.trim();
+			String contactTelUser = et_contactTelUser.getText().toString().trim();
+			String address = et_address.getText().toString().trim();
 			Map<String, String> parMap = new HashMap<String, String>();
 			parMap.put("orderId", order.id + "");
 			parMap.put("companyId", idCode);
 			parMap.put("contactTelUser", contactTelUser);
 			parMap.put("repairContent", repairContent);
+			parMap.put("address", address);
 			String result = HttpUtils.postByApi(params[0], parMap);
 			return result;
 		}

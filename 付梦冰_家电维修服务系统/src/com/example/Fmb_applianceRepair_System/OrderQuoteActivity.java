@@ -6,7 +6,9 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.application.MyApplication;
 import com.bean.Order;
+import com.bean.User;
 import com.constant.Constant;
 import com.utils.HttpUtils;
 import com.utils.ToastUtils;
@@ -14,6 +16,7 @@ import com.utils.ToastUtils;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -29,6 +32,7 @@ public class OrderQuoteActivity extends Activity implements OnClickListener {
 	private TextView tv_contactTelUser;
 	private EditText et_contactTelCompany;
 	private EditText et_price;
+	private EditText et_quoteContent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,8 @@ public class OrderQuoteActivity extends Activity implements OnClickListener {
 	}
 
 	private void initView() {
+		MyApplication application = (MyApplication) getApplication();
+		User user = application.getUser();
 		findViewById(R.id.iv_back).setOnClickListener(this);
 		findViewById(R.id.tv_save).setOnClickListener(this);
 		tv_content = (TextView) findViewById(R.id.tv_content);
@@ -50,7 +56,9 @@ public class OrderQuoteActivity extends Activity implements OnClickListener {
 		tv_contactTelUser = (TextView) findViewById(R.id.tv_contactTelUser);
 		tv_contactTelUser.setText(order.contactTelUser);
 		et_contactTelCompany = (EditText) findViewById(R.id.et_contactTelCompany);
+		et_contactTelCompany.setText(user.tel+"");
 		et_price = (EditText) findViewById(R.id.et_price);
+		et_quoteContent = (EditText) findViewById(R.id.et_quoteContent);
 	}
 
 	@Override
@@ -74,33 +82,38 @@ public class OrderQuoteActivity extends Activity implements OnClickListener {
 	}
 
 	private void save() {
-		if (et_contactTelCompany.getText().toString().trim().equals("")) {
+		String contactTelCompany = et_contactTelCompany.getText().toString().trim();
+		String price = et_price.getText().toString().trim();
+		String quoteContent = et_quoteContent.getText().toString().trim();
+		if (contactTelCompany.equals("")) {
 			ToastUtils.showMessage(OrderQuoteActivity.this, "联系电话不能为空");
 			return;
 		}
-		if (et_price.getText().toString().trim().equals("")) {
+		if (price.equals("")) {
 			ToastUtils.showMessage(OrderQuoteActivity.this, "报修金额不能为空");
 			return;
 		}
-		new SaveOrderAsyncTask().execute(Constant.order_Quote);
+		if (quoteContent.equals("")) {
+			ToastUtils.showMessage(OrderQuoteActivity.this, "清单明细不能为空");
+			return;
+		}
+		Map<String, String> parMap=new HashMap<String, String>();
+		parMap.put("ids", order.id + "");
+		parMap.put("price", price);
+		parMap.put("contactTelCompany", contactTelCompany);
+		parMap.put("quoteContent", quoteContent);
+		new SaveOrderAsyncTask(parMap).execute(Constant.order_Quote);
 	}
 
 	class SaveOrderAsyncTask extends AsyncTask<String, Void, String> {
-
+		private Map<String, String> parMap;
+		public SaveOrderAsyncTask(Map<String, String> parMap){
+			this.parMap = parMap;
+		}
 		@Override
 		protected String doInBackground(String... params) {
-
-			String contactTelCompany = et_contactTelCompany.getText().toString().trim();
-			String price = et_price.getText().toString()
-					.trim();
-			Map<String, String> parMap = new HashMap<String, String>();
-			parMap.put("ids", order.id + "");
-			parMap.put("price", price);
-			parMap.put("contactTelCompany", contactTelCompany);
-			String result = HttpUtils.postByApi(params[0], parMap);
-			return result;
+			return HttpUtils.postByApi(params[0], parMap);
 		}
-
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
@@ -113,9 +126,7 @@ public class OrderQuoteActivity extends Activity implements OnClickListener {
 					boolean success = jsonObject.getBoolean("success");
 					if (success) {
 						ToastUtils.showMessage(OrderQuoteActivity.this, msg);
-						Intent intent = new Intent();
-						intent.setAction("orderUpdate");
-						sendBroadcast(intent);
+						sendBroadcast(new Intent("orderUpdate"));
 						finish();
 					} else {
 						ToastUtils.showMessage(OrderQuoteActivity.this, msg);
@@ -125,6 +136,5 @@ public class OrderQuoteActivity extends Activity implements OnClickListener {
 				}
 			}
 		}
-
 	}
 }

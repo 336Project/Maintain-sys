@@ -199,6 +199,7 @@ public class RegisterUserActivity extends Activity implements OnClickListener{
 			parMap.put("password", password);
 			parMap.put("roleCode", roleCode);
 			parMap.put("introduction", introduction);
+			parMap.put("parentId", "");
 			String result = HttpUtils.postByApi(params[0], parMap);
 			return result;
 		}

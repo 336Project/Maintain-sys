@@ -31,7 +31,6 @@ public class OrderAdpater extends BaseAdapter{
 		ViewHolder viewHolder=null;
 		if(convertView==null){
 			view = layoutInflater.inflate(R.layout.lv_order, null);
-			
 			TextView tv_customerCompany = (TextView) view.findViewById(R.id.tv_customerCompany);
 			TextView tv_contactTelCompany = (TextView) view.findViewById(R.id.tv_contactTelCompany);
 			TextView tv_createTime = (TextView) view.findViewById(R.id.tv_createTime);
@@ -52,8 +51,14 @@ public class OrderAdpater extends BaseAdapter{
 		if(!order.quoteTime.equals("null")){
 			viewHolder.tv_quoteTime.setText(order.quoteTime);
 		}
+		else{
+			viewHolder.tv_quoteTime.setText("");
+		}
 		if(!order.price.equals("null")){
 			viewHolder.tv_price.setText(order.price);
+		}
+		else{
+			viewHolder.tv_price.setText("");
 		}
 		viewHolder.tv_status.setText(order.status);
 		return view;

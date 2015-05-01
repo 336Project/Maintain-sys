@@ -16,10 +16,13 @@ public class Order implements Serializable{
 	public String contactTelUser;
 	public String contactTelCompany;
 	public String price;
+	public String address;
+	public String quoteContent;//报价明细
+	public String repairMan;//报修人员信息
 	public Order(long id, long userId, long companyId, String completeTime,
 			String createTime, String quoteTime, String status,
 			String repairContent, String customerUser, String customerCompany,
-			String contactTelUser, String contactTelCompany, String price) {
+			String contactTelUser, String contactTelCompany, String price,String address,String quoteContent,String repairMan) {
 		super();
 		this.id = id;
 		this.userId = userId;
@@ -34,5 +37,8 @@ public class Order implements Serializable{
 		this.contactTelUser = contactTelUser;
 		this.contactTelCompany = contactTelCompany;
 		this.price = price;
+		this.address = address;
+		this.quoteContent = quoteContent;
+		this.repairMan = repairMan;
 	}
 }

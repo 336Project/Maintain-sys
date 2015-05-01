@@ -36,10 +36,9 @@ public class CustomMainActivity extends Activity implements OnClickListener{
 		ll_userdate.setOnClickListener(this);
 		ll_quit = (LinearLayout) findViewById(R.id.ll_quit);
 		ll_quit.setOnClickListener(this);
-		LinearLayout ll_account = (LinearLayout) findViewById(R.id.ll_account);
-		ll_account.setOnClickListener(this);
+//		LinearLayout ll_account = (LinearLayout) findViewById(R.id.ll_account);
+//		ll_account.setOnClickListener(this);
 		findViewById(R.id.ll_order).setOnClickListener(this);
-		
 	}
 
 	@Override
@@ -57,13 +56,12 @@ public class CustomMainActivity extends Activity implements OnClickListener{
 		case R.id.ll_userdate:
 			btn_userdate();
 			break;
-		case R.id.ll_account:
-			btn_account();
-			break;
+//		case R.id.ll_account:
+//			btn_account();
+//			break;
 		case R.id.ll_order:
 			btn_order();
 			break;
-	
 		default:
 			break;
 		}
@@ -93,6 +91,5 @@ public class CustomMainActivity extends Activity implements OnClickListener{
 	private void btn_quit() {
 		MateriaDialogUtils.showBackUser(this);
 	}
-
 
 }

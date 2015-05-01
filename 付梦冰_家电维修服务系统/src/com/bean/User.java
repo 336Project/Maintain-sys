@@ -17,6 +17,7 @@ public class User implements Serializable{
 	public String lastLoginTime; //上次登录时间
 	public String registerTime; //注册时间
 	public String introduction; //简介
+	private int parentId; //所属公司
 	
 	public User(int id, int roleCode, String roleName, String userName,
 			String realName, String nickName, String balance, String email,
@@ -36,5 +37,13 @@ public class User implements Serializable{
 		this.lastLoginTime = lastLoginTime;
 		this.registerTime = registerTime;
 		this.introduction = introduction;
+	}
+
+	public int getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(int parentId) {
+		this.parentId = parentId;
 	}
 }
